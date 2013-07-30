@@ -184,8 +184,70 @@ public function set${1/\w+\s*/\u$0/}($$1)
 
     return $this;
 }
-$0
 endsnippet
+
+snippet gsb "PHP Class BOOLEAN Getter Setter" !b
+/* @var bool */
+protected $$1;
+
+/**
+ * Is $1
+ *
+ * @return bool
+ */
+public function is${1/\w+\s*/\u$0/}()
+{
+    return (bool) $this->$1;
+}
+
+/**
+ * Set $1
+ *
+ * @param bool $$1
+ *
+ * @return this
+ */
+public function set${1/\w+\s*/\u$0/}($$1)
+{
+    $this->$1 = (bool) $$1;
+
+    return $this;
+}
+endsnippet
+
+snippet gsdo "PHP Class DOCTRINE ORM Getter Setter" !b
+/**
+ * @var ${2:string}
+ *
+ * @ORM\Column(type="$2", name="${1/\w+\s*/\u$0/}")
+ */
+protected $$1;
+
+/**
+ * Get $1
+ *
+ * @return $2
+ */
+public function get${1/\w+\s*/\u$0/}()
+{
+    return $this->$1;
+}
+
+/**
+ * Set $1
+ *
+ * @param $2 $$1
+ *
+ * @return this
+ */
+public function set${1/\w+\s*/\u$0/}($$1)
+{
+    $this->$1 = $$1;
+
+    return $this;
+}
+endsnippet
+
 
 snippet pub "Public function" !b
 /**
@@ -318,6 +380,22 @@ public function $1Action($2)
     $3
     return ${4:array();}$0
 }
+endsnippet
+
+snippet priv "Private property var"
+/* @var ${2:string} */
+private \$$1;
+
+endsnippet
+
+snippet prov "Protected property var"
+/* @var ${2:string} */
+protected \$$1;
+
+endsnippet
+
+snippet sp "Set property in constructor"
+\$this->$1 = \$$1;
 endsnippet
 
 # :vim:ft=snippets:
