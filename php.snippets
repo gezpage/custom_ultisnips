@@ -1,7 +1,7 @@
 snippet cl "Class with namespace"
 <?php
 
-namespace ${1:}`!p snip.rv=snip.fn.split('.')[0]`;
+namespace ${1:};
 
 /**
  * ${2:`!p snip.rv=snip.fn.split('.')[0]`}
@@ -248,49 +248,70 @@ public function set${1/\w+\s*/\u$0/}($$1)
 }
 endsnippet
 
-
 snippet pub "Public function" !b
 /**
  * $1
  *
- * @param mixed $2
+ * @param ${3:string} $2
  *
- * @return mixed
+ * @return ${4:string}
  */
 public function ${1:name}(${2:$param})
 {
-    ${VISUAL}${3:return null;}
+    $5
 }
-$0
 endsnippet
 
 snippet pube "Public function (empty params)" !b
 /**
  * $1
  *
- * @return mixed
+ * @return ${4:string}
  */
 public function ${1:name}()
 {
-    ${VISUAL}${3:return null;}
+    $5
 }
-$0
 endsnippet
 
 snippet pro "Protected function" !b
+/**
+ * $1
+ *
+ * @param ${3:string} $2
+ *
+ * @return ${4:string}
+ */
 protected function ${1:name}(${2:$param})
 {
-    ${VISUAL}${3:return null;}
+    $5
 }
-$0
+endsnippet
+
+snippet proe "Protected function (empty params)" !b
+/**
+ * $1
+ *
+ * @return ${4:string}
+ */
+protected function ${1:name}()
+{
+    $5
+}
 endsnippet
 
 snippet pri "Private function" !b
+/**
+ * $1
+ *
+ * @param ${3:string} $2
+ *
+ * @return ${4:string}
+ */
 private function ${1:name}(${2:$param})
 {
-    ${VISUAL}${3:return null;}
+    $5
 }
-$0
 endsnippet
 
 snippet pubs "Public static function" !b
