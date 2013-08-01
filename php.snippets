@@ -1,3 +1,11 @@
+snippet vde "var_dump then exit"
+var_dump($1); exit;
+endsnippet
+
+snippet epe "echo var in <pre> tag then exit"
+echo "<pre>".$1."</pre>"; exit;
+endsnippet
+
 snippet cl "Class with namespace"
 <?php
 
@@ -39,16 +47,6 @@ snippet array "array"
 $${1:arrayName} = array('${2}' => ${3});${4}
 endsnippet
 
-snippet def "def"
-define('${1}'${2});${3}
-endsnippet
-
-snippet do "do"
-do {
-	${2:// code... }
-} while (${1:/* condition */});"
-endsnippet
-
 snippet doc_f "doc_f"
 /**
  * $2
@@ -69,12 +67,6 @@ snippet doc_i "doc_i"
 interface ${1:someClass}
 {${4}
 } // END interface $1"
-endsnippet
-
-snippet else "else"
-else {
-	${1:// code...}
-}
 endsnippet
 
 snippet for "for"
@@ -137,7 +129,7 @@ public function get${1/\w+\s*/\u$0/}()
 {
     return $this->$1;$2
 }
-$4
+
 endsnippet
 
 snippet setter "PHP Class Setter" !b
@@ -154,7 +146,7 @@ public function set${1/\w+\s*/\u$0/}($$1)
 
 	return $this;
 }
-$0
+
 endsnippet
 
 snippet gs "PHP Class Getter Setter" !b
@@ -184,6 +176,7 @@ public function set${1/\w+\s*/\u$0/}($$1)
 
     return $this;
 }
+
 endsnippet
 
 snippet gsb "PHP Class BOOLEAN Getter Setter" !b
@@ -213,6 +206,7 @@ public function set${1/\w+\s*/\u$0/}($$1)
 
     return $this;
 }
+
 endsnippet
 
 snippet gsdo "PHP Class DOCTRINE ORM Getter Setter" !b
@@ -246,6 +240,7 @@ public function set${1/\w+\s*/\u$0/}($$1)
 
     return $this;
 }
+
 endsnippet
 
 snippet pub "Public function" !b
@@ -272,6 +267,7 @@ public function ${1:name}()
 {
     $5
 }
+
 endsnippet
 
 snippet pro "Protected function" !b
@@ -286,6 +282,7 @@ protected function ${1:name}(${2:$param})
 {
     $5
 }
+
 endsnippet
 
 snippet proe "Protected function (empty params)" !b
@@ -312,6 +309,7 @@ private function ${1:name}(${2:$param})
 {
     $5
 }
+
 endsnippet
 
 snippet pubs "Public static function" !b
@@ -319,7 +317,7 @@ public static function ${1:name}(${2:$param})
 {
     ${VISUAL}${3:return null;}
 }
-$0
+
 endsnippet
 
 snippet pros "Protected static function" !b
@@ -327,7 +325,7 @@ protected static function ${1:name}(${2:$param})
 {
     ${VISUAL}${3:return null;}
 }
-$0
+
 endsnippet
 
 snippet pris "Private static function" !b
@@ -335,7 +333,7 @@ private static function ${1:name}(${2:$param})
 {
     ${VISUAL}${3:return null;}
 }
-$0
+
 endsnippet
 
 snippet fu "Function snip" !b
@@ -343,19 +341,19 @@ function ${1:name}(${2:$param})
 {
     ${VISUAL}${3:return null;}
 }
-$0
+
 endsnippet
 
 snippet fore "Foreach loop"
 foreach ($${1:variable} as $${3:value}){
     ${VISUAL}${4}
 }
-$0
+
 endsnippet
 
 snippet new "New class instance" !b
 $$1 = new $1($2);
-$0
+
 endsnippet
 
 snippet ife "if else"
@@ -364,7 +362,7 @@ if (${1:/* condition */}) {
 } else {
     ${3:// code...}
 }
-$0
+
 endsnippet
 
 snippet class "Class declaration template" !b
@@ -379,7 +377,7 @@ class $1
         ${4:// code}
     }
 }
-$0
+
 endsnippet
 
 snippet pr "Dumb debug helper in HTML"
@@ -401,6 +399,7 @@ public function $1Action($2)
     $3
     return ${4:array();}$0
 }
+
 endsnippet
 
 snippet priv "Private property var"
